@@ -30,6 +30,17 @@ The analysis was divided into three main technical stages:
 
 ---
 
+## 🛠️ Technical Challenges & Troubleshooting
+
+During the implementation, I encountered and resolved several data integrity issues that are common in real-world ETL processes:
+
+- **Invalid Column Names (SQL Error 207):** Some raw CSV files were imported with double quotes inside the column headers (e.g., `"order_id"`). I resolved this by creating staging tables (`_clean`) and aliasing the columns to remove the noise.
+- **Data Type Mismatch (SQL Error 8117):** The `price` column was initially imported as a `VARCHAR`. This caused errors when attempting to use the `SUM()` function. 
+- **Currency Localization:** Since the dataset uses the Brazilian format (commas for decimals), I implemented a transformation pipeline using `REPLACE(price, ',', '.')` combined with `TRY_CAST(... AS FLOAT)` to ensure mathematical accuracy without breaking the query.
+- **Null Category Handling:** Identified missing values in the product category names. I applied filters to ensure the business reports focused only on classified data.
+
+---
+
 # SQL Repository (Queries)
 
 Below are the documented queries used in the process.
