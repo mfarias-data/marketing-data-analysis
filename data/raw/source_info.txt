@@ -1,0 +1,18 @@
+# Raw Data Source Information
+
+## Dataset Origin
+The files in this directory were sourced from the "Brazilian E-Commerce Public Dataset by Olist" available on Kaggle.
+
+## Source URL
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+## Description
+This dataset contains information on 100,000 orders placed between 2016 and 2018 across multiple marketplaces in Brazil. It allows for analysis from various dimensions: from order status, price, payment, and freight performance to customer location, product attributes, and finally, reviews written by customers.
+
+## Data Format
+- Format: CSV (Comma-Separated Values)
+- Encoding: UTF-8
+- Note: Financial columns (price/freight) may require string replacement (comma to dot) depending on the SQL import settings.
+
+## License
+The data is public and was provided by Olist to help students and developers practice data analysis and machine learning skills.
